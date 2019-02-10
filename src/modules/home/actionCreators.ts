@@ -6,3 +6,10 @@ export function setLetters(data: any) {
         payload: data,
     };
 }
+
+export function setIsLoading(isLoading: boolean) {
+    return {
+        type: types.IS_LOADING,
+        payload: isLoading,
+    };
+}

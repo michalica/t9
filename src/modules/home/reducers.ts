@@ -1,6 +1,7 @@
 import * as types from './types';
 const defaultState = {
-    letters: []
+    letters: [],
+    isLoading: false
 };
 
 interface HomeReducerInterface {
@@ -13,6 +14,10 @@ export default function HomeReducer (state = defaultState, action:HomeReducerInt
         case types.SET_LETTERS:
             return {...state,
                 letters: action.payload.letters
+            };
+        case types.IS_LOADING:
+            return {...state,
+                isLoading: action.payload
             };
         default:
             return state;

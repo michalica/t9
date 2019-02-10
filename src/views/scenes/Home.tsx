@@ -13,7 +13,8 @@ const Logo = styled.h1`
 
 interface PropsInterface {
     fetchApi: Function,
-    letters: Array<string>
+    letters: Array<string>,
+    isLoading: boolean
 }
 
 class Home extends React.Component<PropsInterface, any> {
@@ -29,12 +30,12 @@ class Home extends React.Component<PropsInterface, any> {
     }
 
     render() {
-        const {letters} = this.props;
+        const {letters, isLoading} = this.props;
         return (
             <div>
                 <Container textAlign='center'>
                     <Logo>T9</Logo>
-                    <UserInput handleChange={this.handleChange}/>
+                    <UserInput isLoading={isLoading} handleChange={this.handleChange}/>
                     <Result letters={letters}/>
                 </Container>
             </div>
