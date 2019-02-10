@@ -1,7 +1,9 @@
 import React from 'react';
 import UserInput from '../components/UserInput';
+import Result from '../components/Result';
+
 import styled from 'styled-components';
-import { Container } from 'semantic-ui-react'
+import {Container} from 'semantic-ui-react'
 
 const Logo = styled.h1`
     font-size: 22px
@@ -9,15 +11,35 @@ const Logo = styled.h1`
     margin-top: 80px!important
 `
 
-function Home({}) {
-    return (
-        <div>
-            <Container textAlign='center'>
-                <Logo>T9</Logo>
-                <UserInput />
-            </Container>
-        </div>
-    );
+interface PropsInterface {
+    fetchApi: Function,
+    letters: Array<string>
+}
+
+class Home extends React.Component<PropsInterface, any> {
+    constructor(props: PropsInterface) {
+        super(props);
+    }
+
+    handleChange = (values: String) => {
+        if (values && values != null) {
+            this.props.fetchApi(values);
+            console.log(values);
+        }
+    }
+
+    render() {
+        const {letters} = this.props;
+        return (
+            <div>
+                <Container textAlign='center'>
+                    <Logo>T9</Logo>
+                    <UserInput handleChange={this.handleChange}/>
+                    <Result letters={letters}/>
+                </Container>
+            </div>
+        );
+    }
 };
 
 export default Home;

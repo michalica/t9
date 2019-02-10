@@ -1,9 +1,9 @@
 import React from 'react';
 import {Input} from 'semantic-ui-react'
 
-function UserInput({}) {
+function UserInput(props: { handleChange: Function }) {
     return (
-        <Input loading icon='user' placeholder='Search...'/>
+        <Input onChange={(event) => props.handleChange(event.target.value)} loading icon='user' placeholder='Search...'/>
     );
 };
 
