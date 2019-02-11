@@ -7,3 +7,7 @@ export function geIsLoading(state:any) {
 export function getValidationError(state:any) {
     return state.modules.home.form.validationError;
 }
+
+export function getFormValue(state:any) {
+    return state.modules.home.form.value;
+}

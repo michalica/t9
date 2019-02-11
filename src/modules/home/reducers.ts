@@ -5,6 +5,7 @@ const defaultState = {
     hasError: false,
     form: {
         validationError: false,
+        value: '',
     }
 };
 
@@ -33,6 +34,12 @@ export default function HomeReducer (state = defaultState, action:HomeReducerInt
                     validationError: action.payload,
                 }
             };
+        case types.SET_FORM_VALUE:
+            return {...state,
+                form: {...state.form,
+                    value: action.payload,
+                }
+            }
 
         default:
             return state;

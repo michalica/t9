@@ -16,6 +16,7 @@ interface PropsInterface {
     letters: Array<string>,
     isLoading: boolean,
     validationError: boolean,
+    formValue: string,
 }
 
 class Home extends React.Component<PropsInterface, any> {
@@ -33,6 +34,8 @@ class Home extends React.Component<PropsInterface, any> {
             letters,
             isLoading,
             validationError,
+            formValue,
+
         } = this.props;
         return (
             <div>
@@ -42,6 +45,7 @@ class Home extends React.Component<PropsInterface, any> {
                         isLoading={isLoading}
                         handleChange={this.handleChange}
                         validationError={validationError}
+                        formValue={formValue}
                     />
                     <Result letters={letters}/>
                 </Container>

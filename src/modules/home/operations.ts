@@ -4,6 +4,8 @@ import {
     setHasError,
     setValidationError,
     removeLetters,
+    setFormValue,
+    cancelFetching,
 } from "./actionCreators";
 
 import {
@@ -14,11 +16,14 @@ import {endpoints} from "../../services/endpoints";
 
 export function fetchT9api(data: string) {
     return (dispatch: any) => {
+        dispatch(setFormValue(data));
         if (data == '') {
             dispatch(setValidationError(false));
+            dispatch(cancelFetching);
             return dispatch(removeLetters());
         }
         if (validateInput(data)) {
+            console.log("val pass - " + data);
             dispatch(setValidationError(false));
             return dispatch(doRequest(data));
         }

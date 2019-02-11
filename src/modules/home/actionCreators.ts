@@ -33,3 +33,20 @@ export function removeLetters() {
         type: types.REMOVE_LETTERS,
     };
 }
+
+export function setFormValue(data:string) {
+    return {
+        type: types.SET_FORM_VALUE,
+        payload: data
+    };
+}
+
+export const cancelFetching = {
+    type: types.CANCEL_FETCHING,
+    meta: {
+        debounce: {
+            cancel: true,
+            key: 'FETCHING_API'
+        }
+    }
+}

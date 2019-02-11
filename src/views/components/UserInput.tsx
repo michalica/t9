@@ -5,6 +5,7 @@ function UserInput(props: {
     handleChange: Function,
     isLoading: boolean,
     validationError: boolean,
+    formValue: string,
 }) {
     return (
         <Input
@@ -15,6 +16,7 @@ function UserInput(props: {
             placeholder='Search...'
             error={props.validationError}
             type="number"
+            value={props.formValue}
         />
     );
 };
