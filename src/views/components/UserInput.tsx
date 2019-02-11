@@ -6,6 +6,8 @@ function UserInput(props: {
     isLoading: boolean,
     validationError: boolean,
     formValue: string,
+    type: string,
+    placeholder: string,
 }) {
     return (
         <Input
@@ -13,9 +15,9 @@ function UserInput(props: {
                 props.handleChange(event.target.value);
             }}
             loading={props.isLoading}
-            placeholder='Search...'
+            placeholder={props.placeholder}
             error={props.validationError}
-            type="number"
+            type={props.type}
             value={props.formValue}
         />
     );

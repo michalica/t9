@@ -47,6 +47,8 @@ class Home extends React.Component<PropsInterface, any> {
                         handleChange={this.handleChange}
                         validationError={validationError}
                         formValue={formValue}
+                        type="number"
+                        placeholder="Search for ..."
                     />
                     <br/>
                     <br/>
@@ -54,7 +56,9 @@ class Home extends React.Component<PropsInterface, any> {
                         handleChange={this.handleChange}
                         value={formValue}
                     />
-                    <Result letters={letters}/>
+                    <Result
+                        letters={letters}
+                    />
                 </Container>
             </div>
         );
