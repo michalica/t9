@@ -4,6 +4,7 @@ import Result from '../components/Result';
 
 import styled from 'styled-components';
 import {Container} from 'semantic-ui-react'
+import Keyboard from '../components/Keyboard';
 
 const Logo = styled.h1`
     font-size: 22px
@@ -46,6 +47,12 @@ class Home extends React.Component<PropsInterface, any> {
                         handleChange={this.handleChange}
                         validationError={validationError}
                         formValue={formValue}
+                    />
+                    <br/>
+                    <br/>
+                    <Keyboard
+                        handleChange={this.handleChange}
+                        value={formValue}
                     />
                     <Result letters={letters}/>
                 </Container>
