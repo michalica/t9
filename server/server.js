@@ -13,6 +13,8 @@ const phoneDigitsToLetters = {
     5: 'JKL', 6: 'MNO', 7: 'PQRS', 8: 'TUV', 9: 'WXYZ'
 };
 
+var regex = /^[0-9]+$/;
+
 var telephoneWords = function(digitString) {
     var result = [''];
 
@@ -47,15 +49,26 @@ var telephoneWords = function(digitString) {
 app.get("/num", function(request, response, next) {
     console.log(request.body); //This prints the JSON document received (if it is a JSON document)
     // if(request.body
+
     const query = request.query;
     const queryNum = query.num;
     let results = [];
+
     if (!queryNum) {
         response.status(400);
         response.send({ error: 'num is not defined!' });
         next();
         return;
     }
+
+    if(!regex.test(queryNum)) {
+        response.status(400);
+        response.send({ error: 'Not valid data' });
+        next();
+        return;
+    }
+
+
 
     results = telephoneWords(queryNum);
 

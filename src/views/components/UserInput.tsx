@@ -7,6 +7,7 @@ function UserInput(props: { handleChange: Function, isLoading: boolean }) {
             onChange={(event) => props.handleChange(event.target.value)}
             loading={props.isLoading}
             placeholder='Search...'
+            type="number"
         />
     );
 };
