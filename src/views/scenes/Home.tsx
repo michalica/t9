@@ -23,10 +23,10 @@ class Home extends React.Component<PropsInterface, any> {
     }
 
     handleChange = (values: String) => {
-        if (values && values != null) {
+        // if (values && values != null) {
             this.props.fetchApi(values);
             console.log(values);
-        }
+        // }
     }
 
     render() {

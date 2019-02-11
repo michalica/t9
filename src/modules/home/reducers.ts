@@ -1,7 +1,8 @@
 import * as types from './types';
 const defaultState = {
     letters: [],
-    isLoading: false
+    isLoading: false,
+    hasError: false,
 };
 
 interface HomeReducerInterface {

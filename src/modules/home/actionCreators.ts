@@ -13,3 +13,9 @@ export function setIsLoading(isLoading: boolean) {
         payload: isLoading,
     };
 }
+export function setHasError(hasError: boolean) {
+    return {
+        type: types.HAS_ERROR,
+        payload: hasError,
+    };
+}

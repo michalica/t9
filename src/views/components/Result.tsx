@@ -16,6 +16,9 @@ const ListItem = styled.li`
 
 
 const Result = (props:{letters: Array<string>}) => {
+    if(!props.letters) {
+        return <div></div>;
+    }
     const items = props.letters.map((item, key) => {
         return <ListItem key={key}> {item} </ListItem>
     });

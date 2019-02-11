@@ -6,6 +6,7 @@ import * as serviceWorker from './serviceWorker';
 import {Provider} from 'react-redux';
 
 
+
 import 'semantic-ui-css/semantic.min.css'
 import {configureStore} from "./store/store";
 import DevTools from "./containers/DevTools";

@@ -1,14 +1,16 @@
 import {
     setLetters,
-    setIsLoading
+    setIsLoading, setHasError
 } from "./actionCreators";
+
+import {endpoints} from "../../services/endpoints";
 
 export function fetchT9api(data: string) {
     const thunk = async (dispatch: any) => {
 
         try {
             dispatch(setIsLoading(true));
-            const response = await fetch('http://localhost:3001/numbers?num=' + data, {
+            const response = await fetch(endpoints.getWords({num: data}), {
                 method: 'GET',
             });
             console.log("req");
@@ -19,7 +21,8 @@ export function fetchT9api(data: string) {
 
 
         } catch (e) {
-            console.log('error ' + e)
+            dispatch(setHasError(true)); // we should save content of exception into Raven TODO
+
         }
     }
         thunk.meta = {

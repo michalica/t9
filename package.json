@@ -9,6 +9,7 @@
     "@types/react": "16.8.2",
     "@types/react-dom": "16.8.0",
     "@types/react-redux": "^7.0.1",
+    "@types/react-transition-group": "^2.0.15",
     "@types/redux": "^3.6.0",
     "@types/redux-debounced": "^0.2.19",
     "@types/redux-devtools": "^3.0.45",
