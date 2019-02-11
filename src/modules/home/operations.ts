@@ -1,11 +1,32 @@
 import {
     setLetters,
-    setIsLoading, setHasError
+    setIsLoading,
+    setHasError,
+    setValidationError,
+    removeLetters,
 } from "./actionCreators";
+
+import {
+    validateInput,
+} from "./utils";
 
 import {endpoints} from "../../services/endpoints";
 
 export function fetchT9api(data: string) {
+    return (dispatch: any) => {
+        if (data == '') {
+            dispatch(setValidationError(false));
+            return dispatch(removeLetters());
+        }
+        if (validateInput(data)) {
+            dispatch(setValidationError(false));
+            return dispatch(doRequest(data));
+        }
+        return dispatch(setValidationError(true));
+    }
+}
+
+export function doRequest(data: string) {
     const thunk = async (dispatch: any) => {
 
         try {
@@ -25,14 +46,15 @@ export function fetchT9api(data: string) {
 
         }
     }
-        thunk.meta = {
-            debounce: {
-                time: 500,
-                leading: false,
-                trailing: true,
-                key: 'FETCHING_API',
-            }
-        };
+    thunk.meta = {
+        debounce: {
+            time: 500,
+            leading: false,
+            trailing: true,
+            key: 'FETCHING_API',
+        }
+    };
     return thunk;
-
 }
+
+

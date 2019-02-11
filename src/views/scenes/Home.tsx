@@ -14,7 +14,8 @@ const Logo = styled.h1`
 interface PropsInterface {
     fetchApi: Function,
     letters: Array<string>,
-    isLoading: boolean
+    isLoading: boolean,
+    validationError: boolean,
 }
 
 class Home extends React.Component<PropsInterface, any> {
@@ -23,19 +24,25 @@ class Home extends React.Component<PropsInterface, any> {
     }
 
     handleChange = (values: String) => {
-        // if (values && values != null) {
-            this.props.fetchApi(values);
-            console.log(values);
-        // }
+        this.props.fetchApi(values);
+        console.log(values);
     }
 
     render() {
-        const {letters, isLoading} = this.props;
+        const {
+            letters,
+            isLoading,
+            validationError,
+        } = this.props;
         return (
             <div>
                 <Container textAlign='center'>
                     <Logo>T9</Logo>
-                    <UserInput isLoading={isLoading} handleChange={this.handleChange}/>
+                    <UserInput
+                        isLoading={isLoading}
+                        handleChange={this.handleChange}
+                        validationError={validationError}
+                    />
                     <Result letters={letters}/>
                 </Container>
             </div>
