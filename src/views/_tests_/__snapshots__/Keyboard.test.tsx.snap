@@ -1,0 +1,83 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render withou crasing 1`] = `
+<div>
+  <div>
+    <button
+      className="ui icon button sc-bdVaJa hBFItv"
+      onClick={[Function]}
+    >
+      1
+    </button>
+    <button
+      className="ui icon button sc-bdVaJa hBFItv"
+      onClick={[Function]}
+    >
+      2
+    </button>
+    <button
+      className="ui icon button sc-bdVaJa hBFItv"
+      onClick={[Function]}
+    >
+      3
+    </button>
+    <br />
+    <button
+      className="ui icon button sc-bdVaJa hBFItv"
+      onClick={[Function]}
+    >
+      4
+    </button>
+    <button
+      className="ui icon button sc-bdVaJa hBFItv"
+      onClick={[Function]}
+    >
+      5
+    </button>
+    <button
+      className="ui icon button sc-bdVaJa hBFItv"
+      onClick={[Function]}
+    >
+      6
+    </button>
+    <br />
+    <button
+      className="ui icon button sc-bdVaJa hBFItv"
+      onClick={[Function]}
+    >
+      7
+    </button>
+    <button
+      className="ui icon button sc-bdVaJa hBFItv"
+      onClick={[Function]}
+    >
+      8
+    </button>
+    <button
+      className="ui icon button sc-bdVaJa hBFItv"
+      onClick={[Function]}
+    >
+      9
+    </button>
+    <br />
+    <button
+      className="ui icon button sc-bdVaJa hBFItv"
+      disabled={true}
+    >
+      #
+    </button>
+    <button
+      className="ui icon button sc-bdVaJa hBFItv"
+      onClick={[Function]}
+    >
+      0
+    </button>
+    <button
+      className="ui icon button sc-bdVaJa hBFItv"
+      onClick={[Function]}
+    >
+      &lt;
+    </button>
+  </div>
+</div>
+`;

@@ -12,16 +12,16 @@ class Keyboard extends Component<{
 }, any> {
 
 
-    handleClick = (number: string):void => {
-        this.props.handleChange(this.props.value + number)
-
+    public handleClick = (number: string) => {
+        return this.props.handleChange(this.props.value + number)
     }
 
-    delete = ():void => {
+    delete = () => {
         const val = this.props.value;
         if (val.length > 0) {
-            this.props.handleChange(val.slice(0, val.length - 1));
+            return this.props.handleChange(val.slice(0, val.length - 1));
         }
+        return null;
     }
 
     render() {
