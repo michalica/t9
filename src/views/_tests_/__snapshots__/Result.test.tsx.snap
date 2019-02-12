@@ -1,0 +1,134 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders without crashing empty 1`] = `
+<div>
+  <ul
+    className="sc-bdVaJa loehwO"
+  >
+    <li
+      className="sc-bwzfXH erLWkn"
+    >
+       
+      1
+       
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`renders without crashing with MoreButton 1`] = `
+<div>
+  <ul
+    className="sc-bdVaJa loehwO"
+  >
+    <li
+      className="sc-bwzfXH erLWkn"
+    >
+       
+      1
+       
+    </li>
+    <li
+      className="sc-bwzfXH erLWkn"
+    >
+       
+      2
+       
+    </li>
+    <li
+      className="sc-bwzfXH erLWkn"
+    >
+       
+      3
+       
+    </li>
+    <li
+      className="sc-bwzfXH erLWkn"
+    >
+       
+      4
+       
+    </li>
+    <li
+      className="sc-bwzfXH erLWkn"
+    >
+       
+      5
+       
+    </li>
+    <li
+      className="sc-bwzfXH erLWkn"
+    >
+       
+      6
+       
+    </li>
+    <li
+      className="sc-bwzfXH erLWkn"
+    >
+       
+      7
+       
+    </li>
+    <li
+      className="sc-bwzfXH erLWkn"
+    >
+       
+      8
+       
+    </li>
+    <li
+      className="sc-bwzfXH erLWkn"
+    >
+       
+      9
+       
+    </li>
+    <li
+      className="sc-bwzfXH erLWkn"
+    >
+       
+      10
+       
+    </li>
+    <li
+      className="sc-bwzfXH erLWkn"
+    >
+       
+      11
+       
+    </li>
+  </ul>
+  <div>
+    <button
+      className="ui loading button"
+      onClick={[Function]}
+    >
+      +
+    </button>
+  </div>
+</div>
+`;
+
+exports[`renders without crashing without MoreButton 1`] = `
+<div>
+  <ul
+    className="sc-bdVaJa loehwO"
+  >
+    <li
+      className="sc-bwzfXH erLWkn"
+    >
+       
+      abc
+       
+    </li>
+    <li
+      className="sc-bwzfXH erLWkn"
+    >
+       
+      fds
+       
+    </li>
+  </ul>
+</div>
+`;

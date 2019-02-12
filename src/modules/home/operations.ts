@@ -35,7 +35,6 @@ export function fetchT9api(data: string) {
 
 export function doRequest(data: string, isUpdating = false) {
     const thunk = async (dispatch: any, getState: Function) => {
-
         try {
             dispatch(setIsLoading(true));
             const response = await fetch(endpoints.getWords(data, getState().modules.home.pagination), {

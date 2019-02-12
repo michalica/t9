@@ -19,8 +19,9 @@ const Result = (props: {
     letters: Array<string>,
     handleShowMoreButtonClick: Function,
     isLoading: boolean,
+
 }) => {
-    if (!props.letters || props.letters.length == 0) {
+    if (props.letters.length === 0) {
         return <div></div>;
     }
     const items = props.letters.map((item, key) => {
@@ -45,6 +46,10 @@ const Result = (props: {
         </div>
     );
 }
+
+Result.defaultProps = {
+    letters: [''],
+};
 
 
 export default Result;

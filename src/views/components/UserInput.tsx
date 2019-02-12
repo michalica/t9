@@ -3,11 +3,11 @@ import {Input} from 'semantic-ui-react'
 
 function UserInput(props: {
     handleChange: Function,
-    isLoading: boolean,
-    validationError: boolean,
+    isLoading?: boolean,
+    validationError?: boolean,
     formValue: string,
-    type: string,
-    placeholder: string,
+    type?: string,
+    placeholder?: string,
 }) {
     return (
         <Input
@@ -21,6 +21,13 @@ function UserInput(props: {
             value={props.formValue}
         />
     );
+};
+
+UserInput.defaultProps ={
+    isLoading: false,
+    validationError: false,
+    type: 'text',
+    placeHolder: '',
 };
 
 export default UserInput;

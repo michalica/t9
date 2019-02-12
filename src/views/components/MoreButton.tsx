@@ -4,7 +4,7 @@ import {Button} from "semantic-ui-react";
 const MoreButton = (props: {
     text: string,
     handleClick: Function,
-    isLoading: boolean,
+    isLoading?: boolean,
 }) => {
     return (
         <div>
@@ -16,6 +16,10 @@ const MoreButton = (props: {
             </Button>
         </div>
     );
+};
+
+MoreButton.defaultProps = {
+    isLoading: false,
 };
 
 
