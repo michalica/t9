@@ -6,6 +6,12 @@ export function setLetters(data: any) {
         payload: data,
     };
 }
+export function updateLetters(data: any) {
+    return {
+        type: types.UPDATE_LETTERS,
+        payload: data,
+    };
+}
 
 export function setIsLoading(isLoading: boolean) {
     return {
@@ -38,6 +44,17 @@ export function setFormValue(data:string) {
     return {
         type: types.SET_FORM_VALUE,
         payload: data
+    };
+}
+export function incrementPage() {
+    return {
+        type: types.INCREMENT_PAGE,
+    };
+}
+
+export function resetPage() {
+    return {
+        type: types.RESET_PAGE,
     };
 }
 

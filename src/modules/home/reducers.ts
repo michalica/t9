@@ -1,6 +1,7 @@
 import * as types from './types';
 const defaultState = {
     letters: [],
+    pagination: 0,
     isLoading: false,
     hasError: false,
     form: {
@@ -19,6 +20,10 @@ export default function HomeReducer (state = defaultState, action:HomeReducerInt
         case types.SET_LETTERS:
             return {...state,
                 letters: action.payload.letters
+            };
+        case types.UPDATE_LETTERS:
+            return {...state,
+                letters: state.letters.slice().concat(...action.payload.letters),
             };
         case types.REMOVE_LETTERS:
             return {...state,
@@ -40,6 +45,16 @@ export default function HomeReducer (state = defaultState, action:HomeReducerInt
                     value: action.payload,
                 }
             }
+        case types.INCREMENT_PAGE:
+            return {
+                ...state,
+                pagination: state.pagination + 1,
+            };
+        case types.RESET_PAGE:
+            return {
+                ...state,
+                pagination: 0,
+            };
 
         default:
             return state;

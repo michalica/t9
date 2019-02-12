@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import Home from '../views/scenes/Home';
-import {fetchT9api} from "../modules/home/operations";
+import {fetchT9api, doRequest} from "../modules/home/operations";
 import {getLetters, geIsLoading, getValidationError, getFormValue} from "../modules/home/selectors";
 
 const mapStateToProps = (state:any) => {
@@ -14,6 +14,7 @@ const mapStateToProps = (state:any) => {
 
 const mapDispatchToProps =  {
         fetchApi:  fetchT9api,
+        doRequest: doRequest,
 };
 const HomeContainer = connect(
     mapStateToProps,

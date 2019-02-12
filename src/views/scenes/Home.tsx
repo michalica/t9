@@ -5,11 +5,14 @@ import Result from '../components/Result';
 import styled from 'styled-components';
 import {Container} from 'semantic-ui-react'
 import Keyboard from '../components/Keyboard';
+import MoreButton from "../components/MoreButton";
 
 const Logo = styled.h1`
     font-size: 22px
     font-weight: bold
     margin-top: 80px!important
+    color: rgb(0, 169, 145);
+
 `
 
 interface PropsInterface {
@@ -18,6 +21,7 @@ interface PropsInterface {
     isLoading: boolean,
     validationError: boolean,
     formValue: string,
+    doRequest: Function,
 }
 
 class Home extends React.Component<PropsInterface, any> {
@@ -27,7 +31,9 @@ class Home extends React.Component<PropsInterface, any> {
 
     handleChange = (values: String) => {
         this.props.fetchApi(values);
-        console.log(values);
+    }
+    handleMoreButtonClick = () => {
+        this.props.doRequest(this.props.formValue, true);
     }
 
     render() {
@@ -36,7 +42,6 @@ class Home extends React.Component<PropsInterface, any> {
             isLoading,
             validationError,
             formValue,
-
         } = this.props;
         return (
             <div>
@@ -58,6 +63,8 @@ class Home extends React.Component<PropsInterface, any> {
                     />
                     <Result
                         letters={letters}
+                        handleShowMoreButtonClick={this.handleMoreButtonClick}
+                        isLoading={isLoading}
                     />
                 </Container>
             </div>

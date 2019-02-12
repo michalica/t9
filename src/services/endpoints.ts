@@ -1,3 +1,3 @@
 export const endpoints = {
-    getWords: (params: {num: string}) =>  'http://localhost:3001/num?num=' + params.num
+    getWords: (num: string, page: string) =>  'http://localhost:3001/num?num=' + num + '&page=' + page,
 };

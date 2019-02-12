@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import MoreButton from "./MoreButton";
 
 const List = styled.ul`
     list-style: none
@@ -14,9 +15,12 @@ const ListItem = styled.li`
 `
 
 
-
-const Result = (props:{letters: Array<string>}) => {
-    if(!props.letters) {
+const Result = (props: {
+    letters: Array<string>,
+    handleShowMoreButtonClick: Function,
+    isLoading: boolean,
+}) => {
+    if (!props.letters || props.letters.length == 0) {
         return <div></div>;
     }
     const items = props.letters.map((item, key) => {
@@ -26,9 +30,18 @@ const Result = (props:{letters: Array<string>}) => {
         <div>
             <List>
                 {
-                   items
+                    items
                 }
             </List>
+            {
+                props.letters.length >= 10 &&
+                <MoreButton
+                    text="+"
+                    handleClick={props.handleShowMoreButtonClick}
+                    isLoading={props.isLoading}
+                />
+            }
+
         </div>
     );
 }

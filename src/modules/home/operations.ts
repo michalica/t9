@@ -6,6 +6,8 @@ import {
     removeLetters,
     setFormValue,
     cancelFetching,
+    incrementPage,
+    resetPage, updateLetters,
 } from "./actionCreators";
 
 import {
@@ -16,6 +18,7 @@ import {endpoints} from "../../services/endpoints";
 
 export function fetchT9api(data: string) {
     return (dispatch: any) => {
+        dispatch(resetPage());
         dispatch(setFormValue(data));
         if (data == '') {
             dispatch(setValidationError(false));
@@ -23,7 +26,6 @@ export function fetchT9api(data: string) {
             return dispatch(removeLetters());
         }
         if (validateInput(data)) {
-            console.log("val pass - " + data);
             dispatch(setValidationError(false));
             return dispatch(doRequest(data));
         }
@@ -31,23 +33,28 @@ export function fetchT9api(data: string) {
     }
 }
 
-export function doRequest(data: string) {
-    const thunk = async (dispatch: any) => {
+export function doRequest(data: string, isUpdating = false) {
+    const thunk = async (dispatch: any, getState: Function) => {
 
         try {
             dispatch(setIsLoading(true));
-            const response = await fetch(endpoints.getWords({num: data}), {
+            const response = await fetch(endpoints.getWords(data, getState().modules.home.pagination), {
                 method: 'GET',
             });
             console.log("req");
             const result = await response.json();
             console.log(result);
-            dispatch(setLetters(result));
+            if(isUpdating) {
+                dispatch(updateLetters(result));
+            } else {
+                dispatch(setLetters(result));
+            }
+            dispatch(incrementPage());
             dispatch(setIsLoading(false));
 
 
         } catch (e) {
-            dispatch(setHasError(true)); // we should save content of exception into Raven TODO
+            dispatch(setHasError(true)); // we should save content of exception into Raven
 
         }
     }
