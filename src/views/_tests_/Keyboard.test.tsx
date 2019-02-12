@@ -38,7 +38,7 @@ it('renders without crashing only with required props', () => {
             value=""
         />
     );
-    expect(wrapper.instance().delete());
+    expect(wrapperShortValue.instance().delete());
     expect(handleChangeSpy).toBeCalledTimes(0);
 
 });
