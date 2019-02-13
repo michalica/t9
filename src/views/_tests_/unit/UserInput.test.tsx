@@ -1,5 +1,5 @@
 import React from 'react';
-import UserInput from '../components/UserInput';
+import UserInput from '../../components/UserInput';
 import {shallow} from 'enzyme';
 
 const handler = jest.fn();

@@ -1,5 +1,5 @@
 import React from 'react';
-import Keyboard from '../components/Keyboard';
+import Keyboard from '../../components/Keyboard';
 import {shallow} from 'enzyme';
 import renderer from "react-test-renderer";
 

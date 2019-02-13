@@ -1,5 +1,5 @@
 import React from 'react';
-import MoreButton from '../components/MoreButton';
+import MoreButton from '../../components/MoreButton';
 import {shallow} from 'enzyme';
 
 const handler = jest.fn();
