@@ -1,0 +1,131 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render withou crasing 1`] = `
+<div>
+  <div
+    className="ui center aligned container"
+  >
+    <h1
+      className="sc-bxivhb cRJeLh"
+    >
+      T9
+    </h1>
+    <div
+      className="ui loading icon input"
+    >
+      <input
+        onChange={[Function]}
+        placeholder="Search for ..."
+        type="number"
+        value="123"
+      />
+      <i
+        aria-hidden="true"
+        className="spinner icon"
+        onClick={[Function]}
+      />
+    </div>
+    <br />
+    <br />
+    <div>
+      <div>
+        <button
+          className="ui icon button sc-htpNat iyezmu"
+          onClick={[Function]}
+        >
+          1
+        </button>
+        <button
+          className="ui icon button sc-htpNat iyezmu"
+          onClick={[Function]}
+        >
+          2
+        </button>
+        <button
+          className="ui icon button sc-htpNat iyezmu"
+          onClick={[Function]}
+        >
+          3
+        </button>
+        <br />
+        <button
+          className="ui icon button sc-htpNat iyezmu"
+          onClick={[Function]}
+        >
+          4
+        </button>
+        <button
+          className="ui icon button sc-htpNat iyezmu"
+          onClick={[Function]}
+        >
+          5
+        </button>
+        <button
+          className="ui icon button sc-htpNat iyezmu"
+          onClick={[Function]}
+        >
+          6
+        </button>
+        <br />
+        <button
+          className="ui icon button sc-htpNat iyezmu"
+          onClick={[Function]}
+        >
+          7
+        </button>
+        <button
+          className="ui icon button sc-htpNat iyezmu"
+          onClick={[Function]}
+        >
+          8
+        </button>
+        <button
+          className="ui icon button sc-htpNat iyezmu"
+          onClick={[Function]}
+        >
+          9
+        </button>
+        <br />
+        <button
+          className="ui icon button sc-htpNat iyezmu"
+          disabled={true}
+        >
+          #
+        </button>
+        <button
+          className="ui icon button sc-htpNat iyezmu"
+          onClick={[Function]}
+        >
+          0
+        </button>
+        <button
+          className="ui icon button sc-htpNat iyezmu"
+          onClick={[Function]}
+        >
+          &lt;
+        </button>
+      </div>
+    </div>
+    <div>
+      <ul
+        className="sc-bdVaJa loehwO"
+      >
+        <li
+          className="sc-bwzfXH erLWkn"
+        >
+           
+          a
+           
+        </li>
+        <li
+          className="sc-bwzfXH erLWkn"
+        >
+           
+          b
+           
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;

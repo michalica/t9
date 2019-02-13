@@ -2,13 +2,11 @@ import thunk from 'redux-thunk';
 import configureMockStore from 'redux-mock-store';
 import fetchMock from 'fetch-mock';
 import createDebounce from 'redux-debounced';
-import * as types from '../types';
 import {
     fetchT9api,
     doRequest
 }
     from "../operations";
-import {type} from "os";
 
 export const createStore = (defaultState: any) => {
     const middlewares = [createDebounce(), thunk];
