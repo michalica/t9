@@ -10,4 +10,8 @@ Runs the app (frontend) and server (node) in the development mode.
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 Server runs on [http://localhost:3001](http://localhost:3001)
 
+### `yarn test`
+
+to run all unit andf integration tests
+
 
