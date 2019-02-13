@@ -16,7 +16,8 @@ import {
 
 import {endpoints} from "../../services/endpoints";
 
-export function fetchT9api(data: string) {
+
+export function fetchT9api(data: string){
     return (dispatch: any) => {
         dispatch(resetPage());
         dispatch(setFormValue(data));
@@ -40,9 +41,8 @@ export function doRequest(data: string, isUpdating = false) {
             const response = await fetch(endpoints.getWords(data, getState().modules.home.pagination), {
                 method: 'GET',
             });
-            console.log("req");
+
             const result = await response.json();
-            console.log(result);
             if(isUpdating) {
                 dispatch(updateLetters(result));
             } else {
@@ -53,6 +53,7 @@ export function doRequest(data: string, isUpdating = false) {
 
 
         } catch (e) {
+            console.log(e);
             dispatch(setHasError(true)); // we should save content of exception into Raven
 
         }

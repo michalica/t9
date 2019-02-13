@@ -12,10 +12,10 @@ const defaultState = {
 
 interface HomeReducerInterface {
     type: string,
-    payload: any
+    payload?: any
 }
 
-export default function HomeReducer (state = defaultState, action:HomeReducerInterface) {
+export default function HomeReducer (state:any = defaultState, action:HomeReducerInterface) {
     switch(action.type) {
         case types.SET_LETTERS:
             return {...state,

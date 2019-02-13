@@ -25,13 +25,7 @@ interface PropsInterface {
 }
 
 class Home extends React.Component<PropsInterface, any> {
-    constructor(props: PropsInterface) {
-        super(props);
-    }
 
-    handleChange = (values: String) => {
-        this.props.fetchApi(values);
-    }
     handleMoreButtonClick = () => {
         this.props.doRequest(this.props.formValue, true);
     }
@@ -42,6 +36,7 @@ class Home extends React.Component<PropsInterface, any> {
             isLoading,
             validationError,
             formValue,
+            fetchApi,
         } = this.props;
         return (
             <div>
@@ -49,7 +44,7 @@ class Home extends React.Component<PropsInterface, any> {
                     <Logo>T9</Logo>
                     <UserInput
                         isLoading={isLoading}
-                        handleChange={this.handleChange}
+                        handleChange={fetchApi}
                         validationError={validationError}
                         formValue={formValue}
                         type="number"
@@ -58,7 +53,7 @@ class Home extends React.Component<PropsInterface, any> {
                     <br/>
                     <br/>
                     <Keyboard
-                        handleChange={this.handleChange}
+                        handleChange={fetchApi}
                         value={formValue}
                     />
                     <Result

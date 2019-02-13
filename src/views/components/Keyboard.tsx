@@ -12,7 +12,7 @@ class Keyboard extends Component<{
 }, any> {
 
 
-    public handleClick = (number: string) => {
+    handleClick = (number: string) => {
         return this.props.handleChange(this.props.value + number)
     }
 

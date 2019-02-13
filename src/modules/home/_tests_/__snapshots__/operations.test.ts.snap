@@ -1,0 +1,135 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`testing operation fetT9Api fetch with empty string 1`] = `
+Array [
+  Object {
+    "type": "RESET_PAGE",
+  },
+  Object {
+    "payload": "",
+    "type": "SET_FORM_VALUE",
+  },
+  Object {
+    "payload": false,
+    "type": "VALIDATION_ERROR",
+  },
+  Object {
+    "type": "REMOVE_LETTERS",
+  },
+]
+`;
+
+exports[`testing operation fetT9Api fetch with string 1`] = `
+Array [
+  Object {
+    "type": "RESET_PAGE",
+  },
+  Object {
+    "payload": "1234",
+    "type": "SET_FORM_VALUE",
+  },
+  Object {
+    "payload": false,
+    "type": "VALIDATION_ERROR",
+  },
+  Object {
+    "payload": true,
+    "type": "IS_LOADING",
+  },
+  Object {
+    "payload": Object {
+      "letters": Array [
+        "abc",
+        "def",
+      ],
+    },
+    "type": "SET_LETTERS",
+  },
+  Object {
+    "type": "INCREMENT_PAGE",
+  },
+  Object {
+    "payload": false,
+    "type": "IS_LOADING",
+  },
+]
+`;
+
+exports[`testing operation fetT9Api fetch with undefined 1`] = `
+Array [
+  Object {
+    "type": "RESET_PAGE",
+  },
+  Object {
+    "payload": null,
+    "type": "SET_FORM_VALUE",
+  },
+  Object {
+    "payload": true,
+    "type": "VALIDATION_ERROR",
+  },
+]
+`;
+
+exports[`testing operations doReqeuest doRequest with string, replace letters 1`] = `
+Array [
+  Object {
+    "payload": true,
+    "type": "IS_LOADING",
+  },
+  Object {
+    "payload": Object {
+      "letters": Array [
+        "abc",
+        "def",
+      ],
+    },
+    "type": "SET_LETTERS",
+  },
+  Object {
+    "type": "INCREMENT_PAGE",
+  },
+  Object {
+    "payload": false,
+    "type": "IS_LOADING",
+  },
+]
+`;
+
+exports[`testing operations doReqeuest doRequest with string, update letters 1`] = `
+Array [
+  Object {
+    "payload": true,
+    "type": "IS_LOADING",
+  },
+  Object {
+    "payload": Object {
+      "letters": Array [
+        "abc",
+        "def",
+      ],
+    },
+    "type": "UPDATE_LETTERS",
+  },
+  Object {
+    "type": "INCREMENT_PAGE",
+  },
+  Object {
+    "payload": false,
+    "type": "IS_LOADING",
+  },
+]
+`;
+
+exports[`testing operations doReqeuest doRequest with undefined, error expected 1`] = `
+Array [
+  Object {
+    "payload": true,
+    "type": "IS_LOADING",
+  },
+  Object {
+    "payload": true,
+    "type": "HAS_ERROR",
+  },
+]
+`;
